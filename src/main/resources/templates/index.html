@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body class="container">
+    <h2>Employees</h2>
+    <hr/>
+    <a href="#" data-th-href="@{/add_employee}" class="btn btn-sm btn-primary">New Employee</a>
+
+    <table class="table mt-2">
+        <thead>
+        <tr>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Email</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-th-each="employee : ${employeeList}">
+            <td data-th-text="${employee.firstName}"></td>
+            <td data-th-text="${employee.lastName}"></td>
+            <td data-th-text="${employee.email}"></td>
+            <td>
+                <a href="#" data-th-href="@{/show_edit_employee/{id}(id=${employee.id})}" class="btn btn-sm btn-info">Edit</a>
+                <a href="#" data-th-href="@{/delete_employee/{id}(id=${employee.id})}" class="btn btn-sm btn-warning">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

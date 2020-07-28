@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System | New Employee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body class="container">
+
+<h2>New Employee</h2>
+<hr/>
+<div class="col-md-6 mt-5">
+    <form action="#" data-th-action="@{/add_employee}" data-th-object="${employee}" method="POST">
+        <input type="hidden" id="id" data-th-field="*{id}">
+        <div class="form-group row">
+            <label for="firstname" class="col-sm-2 col-form-label">Firstname</label>
+            <div class="col-sm-10">
+                <input type="text" data-th-field="*{firstName}" class="form-control" id="firstname" placeholder="Firstname">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="lastname" class="col-sm-2 col-form-label">Lastname</label>
+            <div class="col-sm-10">
+                <input type="text" data-th-field="*{lastName}" class="form-control" id="lastname" placeholder="Lastname">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" data-th-field="*{email}" class="form-control" id="email" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
